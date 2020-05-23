@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MSI 2020 - Front-end Development Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div id="shadow"></div>
+
+    <div class="container">
+        <div class="find-joke">
+            <div class="header-title">
+                <a href="#">MSI 2020</a>
+                <div id="headericon" class="header-icon"><div class="black"><i id="icon" class="fas fa-bars"></i></div><h5 class="favorite-title">Favourite</h5></div>
+            </div>
+            <h4>
+                <span>Hey!</span>
+                <br>
+                Let’s try to find a joke for you:
+            </h4>
+            <form name="form">
+                <div>
+                    <div class="radio">
+                        <input type="radio" id="contactChoice1" name="getjoke" value="random">
+                        <label for="contactChoice1">Random</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="contactChoice2" name="getjoke" value="categoris">
+                        <label for="contactChoice2">From caterogies</label>
+                   <ul id="ul" class="ul-categoris">
+                       <li class="button" data-about="animal">ANIMAL</li>
+                       <li class="button" data-about="career">CAREER</li>
+                       <li class="button" data-about="celebrity">CELEBRITY</li>
+                       <li class="button" data-about="dev">DEV</li>
+                   </ul>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="contactChoice3" name="getjoke" value="search">
+                        <label for="contactChoice3">Search</label>
+                        <br>
+                            <input id="inputSearch" class="input-search" type="text" placeholder="Free text search...">
+                    </div>
+                </div>
+                <button id="getJoke" type="button">Get a joke</button>
+            </form>
+            
+            
+            
+            
+            <div id="joke"></div>
+            
+            
+        </div>
+        <div id="favorite" class="favorite">
+            <h5>Favourite</h5>
+            <div id="favoriteblock" class="favorite-block">
+            </div>
+        </div>
+    </div>
+    <div id="favoriteshadow" class="favorite-shadow"></div>
+
+
+    <script src="https://kit.fontawesome.com/8134e915b1.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
