@@ -100,13 +100,10 @@ inputSearch.addEventListener('input', function(){
 
 
 //API
-
-
 let getJoke = document.getElementById('getJoke');
 let joke;
 
-getJoke.addEventListener('click',async function(){
-    
+async function getResponse(){
     let url = '';
     
     switch(select){
@@ -122,8 +119,13 @@ getJoke.addEventListener('click',async function(){
             }
             break;
         case 'search':
+            if(query){
             url = `https://api.chucknorris.io/jokes/search?query=${query}`;
             break;
+            } else {
+                alert('Enter the search text!');
+                break;  
+            }
         default:
             alert('Select a search category!');
             return;
@@ -141,12 +143,17 @@ getJoke.addEventListener('click',async function(){
     
     
     showJoke(joke);
-    
-    
-    
-    
-    
-    
+}
+
+
+let myForms = document.forms.form;
+console.log(form);
+
+
+
+getJoke.addEventListener('click', getResponse);
+myForms.addEventListener('submit', function(event){
+    getResponse();
 });
 
 
@@ -188,7 +195,7 @@ function showJoke(response){
             
             
             let blockShowJoke = `
-                <div id="del" class="joke">
+                <div id="del" class="joke selectjoke">
                     <div class="heart"><i class="${far} fa-heart"></i></div>
                     <div class="joke-content">
                         <div class="joke-icon"><i class="far fa-comment-alt"></i></div>
@@ -224,7 +231,7 @@ function showJoke(response){
         }
         
         let blockShowJoke = `
-                <div class="joke">
+                <div class="joke selectjoke">
                     <div class="heart"><i class="${far} fa-heart"></i></div>
                     <div class="joke-content">
                         <div class="joke-icon"><i class="far fa-comment-alt"></i></div>
@@ -355,15 +362,23 @@ let shadow = document.getElementById('shadow');
 let closeIcon = document.getElementById('icon');
 let favoriteshadow = document.getElementById('favoriteshadow');
 
-
-
-showTible.addEventListener('click', function(){
+function showShadow(){
     showTibleFavorite.classList.toggle('active'); 
     shadow.classList.toggle('shadow');
     closeIcon.classList.toggle('fa-bars');
     closeIcon.classList.toggle('fa-times-circle');
     favoriteshadow.classList.toggle('hide-favorite');
-});
+}
+
+//showTible.addEventListener('click', function(){
+//    showTibleFavorite.classList.toggle('active'); 
+//    shadow.classList.toggle('shadow');
+//    closeIcon.classList.toggle('fa-bars');
+//    closeIcon.classList.toggle('fa-times-circle');
+//    favoriteshadow.classList.toggle('hide-favorite');
+//});
+showTible.addEventListener('click', showShadow);
+shadow.addEventListener('click', showShadow);
 
 
 
