@@ -350,7 +350,7 @@ function showFavorite(arr){
 showFavorite(arrLike);
 
 
-// tible
+// tablet
 
 
 
@@ -370,13 +370,7 @@ function showShadow(){
     favoriteshadow.classList.toggle('hide-favorite');
 }
 
-//showTible.addEventListener('click', function(){
-//    showTibleFavorite.classList.toggle('active'); 
-//    shadow.classList.toggle('shadow');
-//    closeIcon.classList.toggle('fa-bars');
-//    closeIcon.classList.toggle('fa-times-circle');
-//    favoriteshadow.classList.toggle('hide-favorite');
-//});
+
 showTible.addEventListener('click', showShadow);
 shadow.addEventListener('click', showShadow);
 

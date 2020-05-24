@@ -76,7 +76,7 @@ form button{
 }
 .favorite .joke-icon{
     background-color: #F8F8F8;
-    height: 40px;
+    max-height: 40px;
 }
 .favorite .p-text{
     font-size: 14px;
